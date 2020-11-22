@@ -9,9 +9,7 @@ The purpose of this analysis is to visualize how different campaigns compared to
 ## Analysis and Challenges
 
 ### Analysis of Outcomes Based on Launch Date
-![](Date_Pivot_Table.PNG)
-
-![](Date_Pivot_Fields.PNG)
+<img src="Date_Pivot_Table.PNG" height="400"> <img src="Date_Pivot_Fields.PNG" height="400">
 
 The line chart below was created by a pivot table (above) that looked at launch dates and theater outcomes. The dates were then categorized by months of the year. Additional columns were created and filtered only the counts of successful, failed, and canceled outcomes. The chart also filtered out only outcomes related to theater. A line chart then was selected to compare these outcomes over time. This helped determine when it would be best to start a fundraising campaign. 
 ![](Outcomes%20Based%20on%20Launch%20Date.png)
@@ -30,11 +28,15 @@ Throughout this project, I had two challenges: COUNTIFS and goal ranges.
 
 **Goal Ranges:** Deliverable 2 - The last 2 ranges in the challenge instructions states “45,000 to 49,999” and “Greater than 50,000.” The “greater than” threw me off because I took that literally. The last range (Greater than 50,000) for number failed had this formula: 
 ```
- =COUNTIFS(Kickstarter!F:F,"Failed",Kickstarter!D:D,**">50000"**,Kickstarter!R:R,"plays"). 
+ =COUNTIFS(Kickstarter!F:F,"Failed",Kickstarter!D:D,">50000",Kickstarter!R:R,"plays") 
+ 
+ ">50000"
 ```
 The formula should have said, greater or *equal* to $50,000, shown below:
 ```
- =COUNTIFS(Kickstarter!F:F,"Failed",Kickstarter!D:D,**">=50000"**,Kickstarter!R:R,"plays"). 
+ =COUNTIFS(Kickstarter!F:F,"Failed",Kickstarter!D:D,">=50000",Kickstarter!R:R,"plays") 
+ 
+ ">=50000"
 ```
 Because I omitted the *equal to* part, there were 4 failed outcomes that did not count (with goals of $50,000). Under my number failed column, the total was incorrect after I checked my work. I kept coming up with 349 failed outcomes when it was supposed to add up to 353. After adding *equal to*, my total for number failed was correct.
 
